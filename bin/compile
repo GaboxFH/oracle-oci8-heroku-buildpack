@@ -26,9 +26,9 @@ OCI8_SO_DIR="#{ARGV[0]}/vendor/#{version}/"
 ORACLE_INSTANT_CLIENT_DIR="#{ARGV[0]}/vendor/oracle_instantclient"
 
 indent "Making folders..."
-`mkdir -p #{OCI8_SO_DIR}`
-`mkdir -p #{OCI8_DIR}`
-`mkdir -p #{ORACLE_INSTANT_CLIENT_DIR}`
+`sudo mkdir -p #{OCI8_SO_DIR}`
+`sudo -p #{OCI8_DIR}`
+`sudo -p #{ORACLE_INSTANT_CLIENT_DIR}`
 
 indent "Downloading and extracting archives from #{S3BUCKET}..."
 result = `curl #{OCI8_TGZ} -s -o - | tar -xz -C #{OCI8_SO_DIR} -f - `
